@@ -10,6 +10,8 @@ Lots of things are missing from this repo.  Among them:
 - Redux
 - Routing
 
+<br/>
+<br/>
 ## `create-react-app` boilerplate:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
