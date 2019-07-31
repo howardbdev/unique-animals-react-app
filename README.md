@@ -1,7 +1,7 @@
 
 ## What is this repo?
 
-This repo contains the client-side code for a lecture on the basics of the React component lifecycle and async React.  We look at some of the lifecycle methods and we make some GET and POST fetch requests.  Please refer to the React [docs] for details and more info on the component lifecycle and lifecycle methods.
+This repo contains the client-side code for a lecture on the basics of the React component lifecycle and async React.  We look at some of the lifecycle methods and we make some GET and POST fetch requests.  Please refer to the React [docs](https://reactjs.org) for details and more info on the component lifecycle and lifecycle methods.
 
 ## What isn't in this repo?
 
@@ -59,5 +59,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-[docs](https://reactjs.org)
