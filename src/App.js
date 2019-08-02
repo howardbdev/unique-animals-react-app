@@ -1,36 +1,40 @@
 import React from 'react';
 import './App.css';
 import CenterContainer from "./components/CenterContainer"
-
-import { animals } from "./animals"
+import { connect } from 'react-redux'
+import { getAnimals } from './actions/animals'
 
 class App extends React.Component {
+
   constructor(props){
     super(props)
-    this.state = {
-      animals: []
-    }
+    // this.state = {
+    //   animals: []
+    // }
   }
 
   componentDidMount() {
     // mocking a GET request
-    this.setState({
-      animals
-    })
+    // this.setState({
+    //   animals
+    // })
+
+    // get my animals
+    this.props.getAnimals()
   }
 
   createAnimal = animal => {
     // mocking a POST request
-    this.setState({
-      anmials: animals.concat(animal)
-    })
+    console.log("create animal")
+    // this.setState({
+    //   animals: animals.concat(animal)
+    // })
   }
 
   render() {
     return (
       <div className="App component">
         <CenterContainer
-          animals={this.state.animals}
           createAnimal={this.createAnimal}
         />
       </div>
@@ -38,4 +42,16 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    animals: state.animals
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getAnimals: ()=>dispatch(getAnimals())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
