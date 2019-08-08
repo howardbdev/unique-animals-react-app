@@ -7,7 +7,7 @@ const CenterContainer = ({
   animals
 }) => (
   <div className="CenterContainer">
-    <NewAnimal createAnimal={createAnimal}/>
+    <NewAnimal />
     <Animals />
   </div>
 );
