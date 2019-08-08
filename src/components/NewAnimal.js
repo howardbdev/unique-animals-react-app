@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux"
+import { createAnimal } from "../actions/animals.js"
 
 class NewAnimal extends Component {
   constructor(props) {
@@ -73,7 +75,8 @@ class NewAnimal extends Component {
 
 }
 
-export default NewAnimal;
+
+export default connect(null, { createAnimal })(NewAnimal);
 
 // t.string "name"
 // t.string "fake_scientific_name"

@@ -5,17 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
-
-// create or import a reducer
-const initialState = []
-const animalsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "GET_ANIMALS":
-      return action.animals
-    default:
-      return state;
-  }
-}
+import thunk from "redux-thunk"
+import animalsReducer from './reducers/animals'
 
 const reducers = combineReducers({
   animals: animalsReducer
@@ -25,7 +16,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   reducers,
-  composeEnhancer(applyMiddleware()),
+  composeEnhancer(applyMiddleware(thunk)),
 );
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
