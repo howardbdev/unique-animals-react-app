@@ -1,66 +1,70 @@
 import React, { Component } from 'react';
 
 class NewAnimal extends Component {
+  // state = {
+  //   name: "",
+  //   fake_scientific_name: "",
+  //   description: "",
+  //   image_url: ""
+  // }
+
   constructor(props) {
     super(props)
+    // what state should we have here?
     this.state = {
       name: "",
       fake_scientific_name: "",
-      image_url: "",
-      description: ""
+      description: "",
+      image_url: ""
     }
   }
 
   handleChange = event => {
-    // I want to update the correct state form whichever
-    // input the user changes
-    // what information do I need to update the state
-    const { name, value } = event.target
-    // the above line is the same as the two following lines..
+    // I've gotten to this callback, now what?
     // const name = event.target.name
     // const value = event.target.value
-    // now let's change the state:
+    const { name, value } = event.target
+
     this.setState({
       [name]: value
     })
   }
 
   handleSubmit = event => {
-    // what needs to happen here to create a new animal??
     event.preventDefault()
-    // what information is needed to create an animal?
     this.props.createAnimal(this.state)
   }
 
+  // what is missing from the form below?
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
+          onChange={this.handleChange}
           placeholder="name"
           name="name"
           type="text"
-          onChange={this.handleChange}
           value={this.state.name}
         />
         <input
+          onChange={this.handleChange}
           placeholder="fake_scientific_name"
           name="fake_scientific_name"
           type="text"
-          onChange={this.handleChange}
           value={this.state.fake_scientific_name}
         />
         <input
+          onChange={this.handleChange}
           placeholder="image_url"
           name="image_url"
           type="text"
-          onChange={this.handleChange}
           value={this.state.image_url}
         />
         <input
+          onChange={this.handleChange}
           placeholder="description"
           name="description"
           type="text"
-          onChange={this.handleChange}
           value={this.state.description}
         />
         <input
